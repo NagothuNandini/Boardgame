@@ -119,7 +119,7 @@ pipeline {
                         credentialsId: 'k8s-multi-stage',
                         namespace: '',
                         restrictKubeConfigAccess: false,
-                        serverUrl: 'https://10.0.1.62:6443'
+                        serverUrl: '<server-url>'
                     ) {
                         sh "kubectl apply -f k8s/${namespace}/deployment-service.yaml -n ${namespace} --validate=false"
                     }
