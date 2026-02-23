@@ -1,5 +1,5 @@
 # ===== Build Stage =====
-FROM maven:3.9.9-eclipse-temurin-17 AS build
+FROM docker.io/maven:3.9.9-eclipse-temurin-17 AS build
 WORKDIR /app
 # rrr
 # Copy pom.xml first to leverage Docker layer caching
@@ -15,7 +15,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # ===== Runtime Stage =====
-FROM eclipse-temurin:17-jre-alpine
+FROM docker.io/eclipse-temurin:17-jre-alpine
 WORKDIR /app
 
 # Copy built jar from build stage
