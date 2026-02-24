@@ -3,6 +3,5 @@ WORKDIR /app
 
 # Copy pre-built JAR from workspace
 COPY target/*.jar app.jar
-
 EXPOSE 8080
 ENTRYPOINT ["java","-jar","app.jar"]
