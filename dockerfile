@@ -5,7 +5,6 @@ WORKDIR /app
 # Copy pom.xml first to leverage Docker layer caching
 COPY pom.xml .
 
-
 # Pre-download dependencies (faster rebuilds)
 RUN mvn -B -q -DskipTests dependency:go-offline
 
